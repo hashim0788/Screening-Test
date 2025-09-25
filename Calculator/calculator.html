@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Calculator</title>
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --primary: #4f46e5;
+      --secondary: #6b7280;
+    }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      width: 320px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 14px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: flex;
+      gap: 8px;
+    }
+    button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background: #4338ca;
+    }
+    button.secondary {
+      background: var(--secondary);
+    }
+    button.secondary:hover {
+      background: #4b5563;
+    }
+    #result {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f9fafb;
+      border: 1px dashed #e5e7eb;
+      font-weight: 700;
+      text-align: center;
+    }
+    .note {
+      font-size: 12px;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Simple Calculator</h1>
+
+    <label>Value a</label>
+    <input id="a" type="number" step="any" placeholder="e.g. 12.5">
+
+    <label>Value b</label>
+    <input id="b" type="number" step="any" placeholder="e.g. 3.14">
+
+    <label>Operation</label>
+    <input id="op" type="text" placeholder="add | subtract | multiply | divide or + - * /">
+
+    <div class="buttons">
+      <button id="calc">Calculate</button>
+      <button id="clear" class="secondary">Clear</button>
+    </div>
+
+    <div id="result">Result will appear here</div>
+    <div class="note">Accepted: add, subtract, multiply, divide or + - * /</div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
